@@ -30,9 +30,6 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button button;
-    EditText firstname,lastname,age,email,panel;
-
     //setting up sqlite database
     DataBaseHelper dataBaseHelper=new DataBaseHelper(this);
 
@@ -46,27 +43,26 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-
-
-
-        //adding functionality to our submit button
+        //setting layout for main linearLayout container
 
                 LinearLayout linearLayout =  (LinearLayout) findViewById(R.id.parentLayout);
-                linearLayout.removeAllViews();
-                Log.d("working","Hello There!");
 
                 try{
-                    //calling method in our databaseHelper class for insertion process
+
+
+                    //list for storing class objects
                     List<selectData> ourList;
                     ourList=dataBaseHelper.show_result("CSE");
                     Iterator<selectData> it=ourList.iterator();
                     int i=0;
                     while(it.hasNext()){
                         i++;
+                        //for every object in our list row is assigned there values
                         selectData row;
                         row=it.next();
-                        LinearLayout container=new LinearLayout(MainActivity.this);
 
+                        //creating new layout for every object as CONTAINER
+                        LinearLayout container=new LinearLayout(MainActivity.this);
                         LinearLayout.LayoutParams dimentions=new LinearLayout.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT,ActionBar.LayoutParams.MATCH_PARENT);
                         dimentions.setMargins(20,20,20,20);
                         container.setOrientation(LinearLayout.VERTICAL);
@@ -74,18 +70,26 @@ public class MainActivity extends AppCompatActivity {
                         container.setLayoutParams(dimentions);
                         linearLayout.addView(container);
 
-                        TextView textName=new TextView(MainActivity.this);
-                        textName.setLayoutParams(new ConstraintLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ConstraintLayout.LayoutParams.RIGHT));
+                        //Adding 2 TextView's one for label and another for name
+                        //label
 
-                        container.addView(textName);
+                        TextView textName=new TextView(MainActivity.this);
                         textName.setText("Name :");
                         textName.setTextColor(Color.parseColor("#000000"));
+                        container.addView(textName);
 
+                        //Setting Name
                         TextView text=new TextView(MainActivity.this);
-                        ConstraintSet set = new ConstraintSet();
-                        container.addView(text);
                         text.setText(row.Name);
                         text.setTextColor(Color.parseColor("#000000"));
+//                        text.setRight(textName.getRight()+7000);
+                        ConstraintLayout.LayoutParams Params = new ConstraintLayout.LayoutParams(
+                                ConstraintLayout.LayoutParams.WRAP_CONTENT,
+                                ConstraintLayout.LayoutParams.WRAP_CONTENT);
+
+                        Params.leftToRight=textName.getId();
+                        text.setLayoutParams(Params);
+                        container.addView(text);
 
 
                         Button btn=new Button(MainActivity.this);
