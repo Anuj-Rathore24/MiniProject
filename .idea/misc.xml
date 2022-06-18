@@ -6,6 +6,7 @@
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.2015" />
         <entry key="app/src/main/res/layout/activity_display_data.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_home_page.xml" value="0.22" />
       </map>
     </option>
   </component>

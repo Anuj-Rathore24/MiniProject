@@ -10,11 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Myfirstapp">
         <activity
+            android:name=".homePage"
+            android:exported="false"
+            android:label="@string/title_activity_home_page"
+            android:theme="@style/Theme.Myfirstapp.NoActionBar" />
+        <activity
             android:name=".DIsplayData"
             android:exported="false"
             android:label="Data"
-            android:parentActivityName=".MainActivity"
-            />
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
