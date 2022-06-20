@@ -2,6 +2,8 @@
     <string name="app_name">Admin</string>
     <string name="headingAdmin">Response</string>
     <string name="title_activity_home_page">homePage</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_text_1">CSE</string>
+    <string name="tab_text_2">MECH</string>
+    <string name="tab_text_3">ENTC</string>
+
 </resources>

@@ -36,7 +36,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
+        Intent intent=new Intent(MainActivity.this,homePage.class);
+        startActivity(intent);
+
         Context context=getApplicationContext();
 
         super.onCreate(savedInstanceState);
