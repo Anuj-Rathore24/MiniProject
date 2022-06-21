@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.example.myfirstapp.CseForm;
+import com.example.myfirstapp.MechForm;
 import com.example.myfirstapp.R;
 
 /**
@@ -33,6 +34,9 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         switch (position){
             case 0:
                 return new CseForm();
+
+            case 1:
+                return new MechForm();
             default:
                 return new PlaceholderFragment();
         }
