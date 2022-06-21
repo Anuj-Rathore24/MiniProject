@@ -23,55 +23,124 @@
         app:layout_constraintVertical_bias="0.0"
         tools:layout_editor_absoluteX="20dp" />
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/csefraghead"
-        app:layout_constraintVertical_bias="0.06999999">
 
-        <androidx.appcompat.widget.LinearLayoutCompat
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_margin="20dp"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/csefraghead"
+            android:isScrollContainer="false"
+            app:layout_constraintVertical_bias="0.06999999">
 
-
-            <TextView
-                android:id="@+id/basicinfo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:text="Basic Information"
-                android:textAlignment="center"
-                android:textSize="22sp" />
-
-            <EditText
-                android:id="@+id/name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Name"
-                android:inputType="text" />
-
-            <EditText
-                android:id="@+id/prn"
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
-                android:hint="PRN"
-                android:inputType="number" />
+                android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Email"
-                android:inputType="textEmailAddress" />
-        </androidx.appcompat.widget.LinearLayoutCompat>
 
-    </ScrollView>
+                <TextView
+                    android:id="@+id/basicinfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:text="Basic Information"
+                    android:textAlignment="center"
+                    android:textSize="22sp" />
+
+                <EditText
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:hint="Name"
+                    android:inputType="text" />
+
+                <EditText
+                    android:id="@+id/prn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+
+                    android:hint="PRN"
+                    android:inputType="number" />
+
+                <EditText
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress" />
+
+                <TextView
+                    android:id="@+id/additional"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="30dp"
+                    android:text="Additional Information"
+                    android:textAlignment="center"
+                    android:textSize="22sp" />
+
+                <CheckedTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:checkMark="@drawable/checkmark_foreground"
+                    android:checked="true"
+                    android:text="checkbox1"
+                    android:textSize="19sp" />
+
+                <CheckedTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:checkMark="@drawable/checkmark_foreground"
+                    android:checked="true"
+                    android:text="checkbox2"
+                    android:textSize="19sp" />
+
+                <EditText
+                    android:id="@+id/testing"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:hint="inputBox1"
+                    android:inputType="text" />
+
+                <EditText
+                    android:id="@+id/testing2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:hint="inputBox2"
+                    android:inputType="text" />
+
+                <EditText
+                    android:id="@+id/testing3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:hint="inputBox3"
+                    android:inputType="text" />
+
+                <EditText
+                    android:id="@+id/editTextTextMultiLine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:ems="20"
+                    android:gravity="start|top"
+                    android:hint="Detailed Description"
+                    android:inputType="textMultiLine" />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

@@ -2,9 +2,9 @@
     <string name="app_name">Forms</string>
     <string name="headingAdmin">Response</string>
     <string name="title_activity_home_page">homePage</string>
-    <string name="tab_text_1">CSE</string>
-    <string name="tab_text_2">MECH</string>
-    <string name="tab_text_3">ENTC</string>
+    <string name="tab_text_1">Dept1</string>
+    <string name="tab_text_2">Dept2</string>
+    <string name="tab_text_3">Dept3</string>
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>

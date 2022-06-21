@@ -3,12 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/checkMark_background.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/checkMark_foreground.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/checked_background.xml" value="0.2" />
+        <entry key="app/src/main/res/drawable/checkmark_background.xml" value="0.2015" />
+        <entry key="app/src/main/res/drawable/checkmark_foreground.xml" value="0.2015" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.2015" />
         <entry key="app/src/main/res/layout/activity_display_data.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_home_page.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_cse_form.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_home_page.xml" value="0.22" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/checkMark.xml" value="0.1" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/checkMark_round.xml" value="0.1" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/checkmark.xml" value="0.1" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/checkmark_round.xml" value="0.1" />
       </map>
     </option>
   </component>
