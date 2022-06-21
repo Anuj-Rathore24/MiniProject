@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Myfirstapp">
         <activity
-            android:name=".homePage"
+            android:name=".HomePage"
             android:exported="false"
             android:label="@string/title_activity_home_page"
             android:theme="@style/Theme.Myfirstapp.NoActionBar" />
