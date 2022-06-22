@@ -5,23 +5,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CseForm">
-<androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
 
-    <TextView
-        android:id="@+id/csefraghead"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:text="CSE"
-        android:textAlignment="center"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="20dp" />
+        <TextView
+            android:id="@+id/entcfraghead"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="Entc"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            tools:layout_editor_absoluteX="20dp" />
 
 
         <androidx.core.widget.NestedScrollView
@@ -31,7 +31,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/csefraghead"
+            app:layout_constraintTop_toBottomOf="@+id/entcfraghead"
             android:isScrollContainer="false"
             app:layout_constraintVertical_bias="0.06999999">
 
@@ -85,59 +85,22 @@
                     android:textAlignment="center"
                     android:textSize="22sp" />
 
-                <CheckedTextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_margin="10dp"
-                    android:checkMark="@drawable/checkmark_foreground"
-                    android:checked="true"
-                    android:text="checkbox1"
-                    android:textSize="19sp" />
 
-                <CheckedTextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_margin="10dp"
-                    android:checkMark="@drawable/checkmark_foreground"
-                    android:checked="true"
-                    android:text="checkbox2"
-                    android:textSize="19sp" />
-
-                <EditText
-                    android:id="@+id/testing"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:hint="inputBox1"
-                    android:inputType="text" />
-
-                <EditText
-                    android:id="@+id/testing2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:hint="inputBox2"
-                    android:inputType="text" />
-
-                <EditText
-                    android:id="@+id/testing3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:hint="inputBox3"
-                    android:inputType="text" />
-
-                <EditText
-                    android:id="@+id/editTextTextMultiLine"
+                <ImageView
+                    android:id="@+id/imageView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:ems="20"
-                    android:gravity="start|top"
-                    android:hint="Detailed Description"
-                    android:inputType="textMultiLine" />
+                    android:layout_marginLeft="150dp"
+                    android:contentDescription="Just some random image"
+                    android:src="@mipmap/testimage_round" />
+
+                <MultiAutoCompleteTextView
+                    android:id="@+id/multiAutoCompleteTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="18"
+                    android:layout_margin="20dp"
+                    android:text="MultiAutoCompleteTextView" />
 
                 <Button
                     android:id="@+id/button"
@@ -147,7 +110,9 @@
                     android:layout_marginBottom="65dp"
                     android:text="Submit" />
 
+
+
             </androidx.appcompat.widget.LinearLayoutCompat>
         </androidx.core.widget.NestedScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

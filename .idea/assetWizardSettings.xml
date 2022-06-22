@@ -91,7 +91,7 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="imagePath" value="$USER_HOME$/Downloads/checked.png" />
+                                                <entry key="imagePath" value="$USER_HOME$/Downloads/xandro-vandewalle-lT4TYie_ciE-unsplash.jpg" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -123,8 +123,9 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="foregroundAssetType" value="CLIP_ART" />
-                                      <entry key="outputName" value="checkMark" />
+                                      <entry key="backgroundAssetType" value="COLOR" />
+                                      <entry key="backgroundColor" value="000000" />
+                                      <entry key="outputName" value="testimage" />
                                     </map>
                                   </option>
                                 </PersistentState>
