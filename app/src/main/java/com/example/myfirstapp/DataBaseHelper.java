@@ -66,51 +66,59 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public boolean insert_values_cse(String name,String email,int pnr,String input1,String input2,String input3,String additional){
+    public boolean insert_values_cse(String name,String email,int prn,String input1,String input2,String input3,String additional){
         ;
+
+
         SQLiteDatabase db=this.getWritableDatabase();
+        db.execSQL("CREATE TABLE IF NOT EXISTS computerScience(Name VARCHAR(40),Email VARCHAR(40),prn int,input1 VARCHAR(40),input2 varchar(40),input3 varchar(40),detailed varchar(40));");
+
         ContentValues cv=new ContentValues();
         cv.put("Name",name);
         cv.put("Email",email);
-        cv.put("prn",pnr);
+        cv.put("prn",prn);
         cv.put("input1",input1);
         cv.put("input2",input2);
         cv.put("input3",input3);
         cv.put("detailed",additional);
-//        Log.d("Testing",name+" "+email+" "+pnr+" "+input1+" "+input2+" "+input3);
+//        Log.d("Testing",name+" "+email+" "+prn+" "+input1+" "+input2+" "+input3);
 
 
-        long insert=db.insert("Cse",null,cv);
+        long insert=db.insert("computerScience",null,cv);
         if(insert==-1){
             return false;
         }
         return true;
     }
 
-    public boolean insert_values_mech(String name,String email,int pnr,String time,String date){
+    public boolean insert_values_mech(String name,String email,int prn,String time,String date){
         ;
         SQLiteDatabase db=this.getWritableDatabase();
+        db.execSQL("CREATE TABLE IF NOT EXISTS Mechanical(Name VARCHAR(40),Email VARCHAR(40),prn int,Time VARCHAR(40),Date varchar(40));");
+
         ContentValues cv=new ContentValues();
         cv.put("Name",name);
         cv.put("Email",email);
-        cv.put("prn",pnr);
+        cv.put("prn",prn);
         cv.put("Time",time);
         cv.put("Date",date);
 
-        long insert=db.insert("Mech",null,cv);
+        long insert=db.insert("Mechanical",null,cv);
         if(insert==-1){
             return false;
         }
         return true;
     }
 
-    public boolean insert_values_entc(String name,String email,int pnr,String additional){
+    public boolean insert_values_entc(String name,String email,int prn,String additional){
         ;
         SQLiteDatabase db=this.getWritableDatabase();
+        db.execSQL("CREATE TABLE IF NOT EXISTS ENTC(Name VARCHAR(40),Email VARCHAR(40),prn int,additional VARCHAR(40));");
+
         ContentValues cv=new ContentValues();
         cv.put("Name",name);
         cv.put("Email",email);
-        cv.put("prn",pnr);
+        cv.put("prn",prn);
         cv.put("additional",additional);
 
         long insert=db.insert("ENTC",null,cv);
