@@ -7,6 +7,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -58,7 +61,31 @@ public class EntcForm extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View parentholder=inflater.inflate(R.layout.fragment_entc_form,container,false);
+        DataBaseHelper dataBaseHelper=new DataBaseHelper(getContext());
+
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_entc_form, container, false);
+        Button btn=(Button)parentholder.findViewById(R.id.button);
+
+
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView name=(TextView)parentholder.findViewById(R.id.name);
+                TextView email=(TextView)parentholder.findViewById(R.id.email);
+                TextView prn=(TextView)parentholder.findViewById(R.id.prn);
+                TextView additional=(TextView)parentholder.findViewById(R.id.multiAutoCompleteTextView);
+
+
+                boolean status=dataBaseHelper.insert_values_entc(name.getText().toString(),email.getText().toString(),Integer.parseInt(prn.getText().toString()),additional.getText().toString());
+                String s=(status)?("Successful"):("Failed");
+                Toast.makeText(getContext(),"Submission "+s+" for ENTC Form",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        return parentholder;
+
     }
 }

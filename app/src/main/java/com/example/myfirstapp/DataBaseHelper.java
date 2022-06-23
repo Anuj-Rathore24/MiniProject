@@ -15,19 +15,33 @@ import androidx.annotation.Nullable;
 import java.util.ArrayList;
 
 class selectData implements Serializable {
-    String Name,Email,MotherName,FatherName,AdmissionMode,PreferredBranch;
+    String Name,Email,detailed,input1,input2,input3,time,date,additional;
+    int prn;
     int Contact,Percentile;
-    selectData(String f,String e,int c,String mn,String fn,String pb,String am,int p){
-        Name=f;
-        PreferredBranch=pb;
-        Contact=c;
-        Percentile=p;
 
+    selectData(String n,String e,int p,String i1,String i2,String i3,String d){
+        Name=n;
+        prn=p;
         Email=e;
-        MotherName=mn;
-        FatherName=fn;
-        AdmissionMode=am;
-
+        detailed=d;
+        input1=i1;
+        input2=i2;
+        input3=i3;
+    }
+    selectData(String n,String e,int p,String t,String d){
+        Name=n;
+        prn=p;
+        Email=e;
+        time=t;
+        date=d;
+    }
+    selectData(String n,String e,int p,String a){
+        Name=n;
+        prn=p;
+        Email=e;
+        additional=a;
+    }
+    selectData(){
 
     }
 }
@@ -39,49 +53,83 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     //this is called the first time a database is accessed
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE IF NOT EXISTS CSE(Name VARCHAR(40),Email VARCHAR(40),Contact int,MotherName VARCHAR(40),FatherName varchar(40),PreferredBranch varchar(40),AdmissionMode varchar(40),Percentile int);");
-        db.execSQL("CREATE TABLE IF NOT EXISTS MECH(Name VARCHAR(40),Email VARCHAR(40),Contact int,MotherName VARCHAR(40),FatherName varchar(40),PreferredBranch varchar(40),AdmissionMode varchar(40),Percentile int);");
-        db.execSQL("CREATE TABLE IF NOT EXISTS ECE(Name VARCHAR(40),Email VARCHAR(40),Contact int,MotherName VARCHAR(40),FatherName varchar(40),PreferredBranch varchar(40),AdmissionMode varchar(40),Percentile int);");
-        db.execSQL("CREATE TABLE IF NOT EXISTS CIVIL(Name VARCHAR(40),Email VARCHAR(40),Contact int,MotherName VARCHAR(40),FatherName varchar(40),PreferredBranch varchar(40),AdmissionMode varchar(40),Percentile int);");
-        db.execSQL("CREATE TABLE IF NOT EXISTS LAW(Name VARCHAR(40),Email VARCHAR(40),Contact int,MotherName VARCHAR(40),FatherName varchar(40),PreferredBranch varchar(40),AdmissionMode varchar(40),Percentile int);");
+
+        db.execSQL("CREATE TABLE IF NOT EXISTS Cse(Name VARCHAR(40),Email VARCHAR(40),prn int,input1 VARCHAR(40),input2 varchar(40),input3 varchar(40),detailed varchar(40));");
+        db.execSQL("CREATE TABLE IF NOT EXISTS Mech(Name VARCHAR(40),Email VARCHAR(40),prn int,Time VARCHAR(40),Date varchar(40));");
+        db.execSQL("CREATE TABLE IF NOT EXISTS ENTC(Name VARCHAR(40),Email VARCHAR(40),prn int,additional VARCHAR(40));");
 
     }
     //this is called if database version changes
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
+
     }
-    public boolean insert_values(String TableName,String name,String email,int contact,String mothername,String fathername,String preferredname,String admissionmode,int percentile){
+
+    public boolean insert_values_cse(String name,String email,int pnr,String input1,String input2,String input3,String additional){
         ;
         SQLiteDatabase db=this.getWritableDatabase();
         ContentValues cv=new ContentValues();
         cv.put("Name",name);
         cv.put("Email",email);
-        cv.put("Contact",contact);
-        cv.put("MotherName",mothername);
-        cv.put("FatherName",fathername);
-        cv.put("PreferredBranch",preferredname);
-        cv.put("AdmissionMode",admissionmode);
-        cv.put("Percentile",percentile);
+        cv.put("prn",pnr);
+        cv.put("input1",input1);
+        cv.put("input2",input2);
+        cv.put("input3",input3);
+        cv.put("detailed",additional);
+//        Log.d("Testing",name+" "+email+" "+pnr+" "+input1+" "+input2+" "+input3);
 
-        long insert=db.insert(TableName,null,cv);
+
+        long insert=db.insert("Cse",null,cv);
         if(insert==-1){
             return false;
         }
         return true;
     }
+
+    public boolean insert_values_mech(String name,String email,int pnr,String time,String date){
+        ;
+        SQLiteDatabase db=this.getWritableDatabase();
+        ContentValues cv=new ContentValues();
+        cv.put("Name",name);
+        cv.put("Email",email);
+        cv.put("prn",pnr);
+        cv.put("Time",time);
+        cv.put("Date",date);
+
+        long insert=db.insert("Mech",null,cv);
+        if(insert==-1){
+            return false;
+        }
+        return true;
+    }
+
+    public boolean insert_values_entc(String name,String email,int pnr,String additional){
+        ;
+        SQLiteDatabase db=this.getWritableDatabase();
+        ContentValues cv=new ContentValues();
+        cv.put("Name",name);
+        cv.put("Email",email);
+        cv.put("prn",pnr);
+        cv.put("additional",additional);
+
+        long insert=db.insert("ENTC",null,cv);
+        if(insert==-1){
+            return false;
+        }
+        return true;
+    }
+
+
     public List<selectData> show_result(String TableName){
 
         List<selectData> ourList=new ArrayList<selectData>();
 
         SQLiteDatabase db=this.getReadableDatabase();
 
-        db.execSQL("CREATE TABLE IF NOT EXISTS CSE(Name VARCHAR(40),Email VARCHAR(40),Contact int,MotherName VARCHAR(40),FatherName varchar(40),PreferredBranch varchar(40),AdmissionMode varchar(40),Percentile int);");
-        db.execSQL("CREATE TABLE IF NOT EXISTS MECH(Name VARCHAR(40),Email VARCHAR(40),Contact int,MotherName VARCHAR(40),FatherName varchar(40),PreferredBranch varchar(40),AdmissionMode varchar(40),Percentile int);");
-        db.execSQL("CREATE TABLE IF NOT EXISTS ECE(Name VARCHAR(40),Email VARCHAR(40),Contact int,MotherName VARCHAR(40),FatherName varchar(40),PreferredBranch varchar(40),AdmissionMode varchar(40),Percentile int);");
-        db.execSQL("CREATE TABLE IF NOT EXISTS CIVIL(Name VARCHAR(40),Email VARCHAR(40),Contact int,MotherName VARCHAR(40),FatherName varchar(40),PreferredBranch varchar(40),AdmissionMode varchar(40),Percentile int);");
-        db.execSQL("CREATE TABLE IF NOT EXISTS LAW(Name VARCHAR(40),Email VARCHAR(40),Contact int,MotherName VARCHAR(40),FatherName varchar(40),PreferredBranch varchar(40),AdmissionMode varchar(40),Percentile int);");
-
+        db.execSQL("CREATE TABLE IF NOT EXISTS Cse(Name VARCHAR(40),Email VARCHAR(40),prn int,input1 VARCHAR(40),input2 varchar(40),input3 varchar(40),detailed varchar(40));");
+        db.execSQL("CREATE TABLE IF NOT EXISTS Mech(Name VARCHAR(40),Email VARCHAR(40),prn int,Time VARCHAR(40),Date varchar(40));");
+        db.execSQL("CREATE TABLE IF NOT EXISTS ENTC(Name VARCHAR(40),Email VARCHAR(40),prn int,additional VARCHAR(40));");
 
 
         Cursor resultSet=db.rawQuery("SELECT * FROM "+"'"+TableName+"'"+" ;",null);
@@ -89,7 +137,16 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         resultSet.moveToFirst();
         while(!resultSet.isAfterLast()){
 
-            selectData data=new selectData(resultSet.getString(0),resultSet.getString(1),resultSet.getColumnIndex("Contact"),resultSet.getString(3),resultSet.getString(4),resultSet.getString(5),resultSet.getString(6),resultSet.getColumnIndex("Percentile"));
+            selectData data=new selectData();
+            if(TableName=="Cse"){
+
+                data=new selectData(resultSet.getString(0),resultSet.getString(1),resultSet.getColumnIndex("prn"),resultSet.getString(3),resultSet.getString(4),resultSet.getString(5),resultSet.getString(6));
+            }
+            else if(TableName=="Mech"){
+                 data=new selectData(resultSet.getString(0),resultSet.getString(1),resultSet.getColumnIndex("prn"),resultSet.getString(3),resultSet.getString(4));
+            }else if(TableName=="ENTC"){
+                 data=new selectData(resultSet.getString(0),resultSet.getString(1),resultSet.getColumnIndex("prn"),resultSet.getString(3));
+            }
             ourList.add(data);
             resultSet.moveToNext();
         }

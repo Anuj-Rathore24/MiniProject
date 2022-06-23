@@ -10,9 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Myfirstapp">
         <activity
-            android:name=".HomePage"
+            android:name=".MainActivity"
             android:exported="false"
-            android:label="@string/title_activity_home_page"
+            android:label="MainActivity"
             android:theme="@style/Theme.Myfirstapp.NoActionBar" />
         <activity
             android:name=".DIsplayData"
@@ -20,7 +20,7 @@
             android:label="Data"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".MainActivity"
+            android:name=".HomePage"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

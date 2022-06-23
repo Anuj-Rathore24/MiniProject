@@ -37,8 +37,10 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
                 return new CseForm();
 
             case 1:
+
                 return new MechForm();
             case 2:
+
                 return new EntcForm();
             default:
                 return new PlaceholderFragment();

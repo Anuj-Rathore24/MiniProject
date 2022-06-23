@@ -4,9 +4,16 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.material.snackbar.Snackbar;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +21,7 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class CseForm extends Fragment {
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -48,6 +56,8 @@ public class CseForm extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
@@ -58,7 +68,37 @@ public class CseForm extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        
+        View parentholder=inflater.inflate(R.layout.fragment_cse_form,container,false);
+    DataBaseHelper dataBaseHelper=new DataBaseHelper(getContext());
+
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_cse_form, container, false);
+        Button btn=(Button)parentholder.findViewById(R.id.button);
+
+
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView name=(TextView)parentholder.findViewById(R.id.name);
+                TextView email=(TextView)parentholder.findViewById(R.id.email);
+                TextView prn=(TextView)parentholder.findViewById(R.id.prn);
+                TextView input1=(TextView)parentholder.findViewById(R.id.testing);
+                TextView input2=(TextView)parentholder.findViewById(R.id.testing2);
+                TextView input3=(TextView)parentholder.findViewById(R.id.testing3);
+                TextView detailed=(TextView)parentholder.findViewById(R.id.editTextTextMultiLine);
+
+
+                boolean status=dataBaseHelper.insert_values_cse(name.getText().toString(),email.getText().toString(),Integer.parseInt(prn.getText().toString()),input1.getText().toString(),input2.getText().toString(),input3.getText().toString(),detailed.getText().toString());
+                String s=(status)?("Successful"):("Failed");
+                Toast.makeText(getContext(),"Submission "+s+" For CSE Form",Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+        return parentholder;
+
+
     }
 }
