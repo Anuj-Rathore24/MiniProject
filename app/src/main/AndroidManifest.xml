@@ -10,6 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Myfirstapp">
         <activity
+            android:name=".adminHomePage"
+            android:exported="false"
+            android:label="@string/title_activity_admin_home_page"
+            android:theme="@style/Theme.Myfirstapp.NoActionBar" />
+        <activity
             android:name=".MainActivity"
             android:exported="false"
             android:label="MainActivity"
