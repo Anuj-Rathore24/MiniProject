@@ -15,7 +15,7 @@ import androidx.annotation.Nullable;
 import java.util.ArrayList;
 
 class selectData implements Serializable {
-    String Name,Email,detailed,input1,input2,input3,time,date,additional;
+    String Name,Email,input1,input2,input3,time,date,additional,type;
     int prn;
     int Contact,Percentile;
 
@@ -23,10 +23,11 @@ class selectData implements Serializable {
         Name=n;
         prn=p;
         Email=e;
-        detailed=d;
+        additional=d;
         input1=i1;
         input2=i2;
         input3=i3;
+        type="CSE";
     }
     selectData(String n,String e,int p,String t,String d){
         Name=n;
@@ -34,12 +35,15 @@ class selectData implements Serializable {
         Email=e;
         time=t;
         date=d;
+        type="Mech";
+
     }
     selectData(String n,String e,int p,String a){
         Name=n;
         prn=p;
         Email=e;
         additional=a;
+        type="ENTC";
     }
     selectData(){
 
