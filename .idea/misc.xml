@@ -9,17 +9,25 @@
         <entry key="app/src/main/res/drawable/checkmark_background.xml" value="0.2015" />
         <entry key="app/src/main/res/drawable/checkmark_foreground.xml" value="0.2015" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.2015" />
+        <entry key="app/src/main/res/layout-w1240dp/activity_admin_login.xml" value="0.1" />
+        <entry key="app/src/main/res/layout-w936dp/activity_admin_login.xml" value="0.75" />
+        <entry key="app/src/main/res/layout/activity_admin_home_page.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_admin_login.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_admin_login2.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_display_data.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_home_page.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/content_admin_login.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_admin_home_page.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_cse_form.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_cse_form_responses.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_entc_form.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_entc_form_responses.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_first.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_home_page.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_mech_form.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_mech_form_responses.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_second.xml" value="0.1" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/checkMark.xml" value="0.1" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/checkMark_round.xml" value="0.1" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/checkmark.xml" value="0.1" />
