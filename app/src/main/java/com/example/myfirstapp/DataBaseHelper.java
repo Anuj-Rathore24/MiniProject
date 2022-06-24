@@ -54,8 +54,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        db.execSQL("CREATE TABLE IF NOT EXISTS Cse(Name VARCHAR(40),Email VARCHAR(40),prn int,input1 VARCHAR(40),input2 varchar(40),input3 varchar(40),detailed varchar(40));");
-        db.execSQL("CREATE TABLE IF NOT EXISTS Mech(Name VARCHAR(40),Email VARCHAR(40),prn int,Time VARCHAR(40),Date varchar(40));");
+        db.execSQL("CREATE TABLE IF NOT EXISTS computerScience(Name VARCHAR(40),Email VARCHAR(40),prn int,input1 VARCHAR(40),input2 varchar(40),input3 varchar(40),detailed varchar(40));");
+        db.execSQL("CREATE TABLE IF NOT EXISTS Mechanical(Name VARCHAR(40),Email VARCHAR(40),prn int,Time VARCHAR(40),Date varchar(40));");
         db.execSQL("CREATE TABLE IF NOT EXISTS ENTC(Name VARCHAR(40),Email VARCHAR(40),prn int,additional VARCHAR(40));");
 
     }
@@ -135,9 +135,10 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
         SQLiteDatabase db=this.getReadableDatabase();
 
-        db.execSQL("CREATE TABLE IF NOT EXISTS Cse(Name VARCHAR(40),Email VARCHAR(40),prn int,input1 VARCHAR(40),input2 varchar(40),input3 varchar(40),detailed varchar(40));");
-        db.execSQL("CREATE TABLE IF NOT EXISTS Mech(Name VARCHAR(40),Email VARCHAR(40),prn int,Time VARCHAR(40),Date varchar(40));");
+        db.execSQL("CREATE TABLE IF NOT EXISTS computerScience(Name VARCHAR(40),Email VARCHAR(40),prn int,input1 VARCHAR(40),input2 varchar(40),input3 varchar(40),detailed varchar(40));");
+        db.execSQL("CREATE TABLE IF NOT EXISTS Mechanical(Name VARCHAR(40),Email VARCHAR(40),prn int,Time VARCHAR(40),Date varchar(40));");
         db.execSQL("CREATE TABLE IF NOT EXISTS ENTC(Name VARCHAR(40),Email VARCHAR(40),prn int,additional VARCHAR(40));");
+
 
 
         Cursor resultSet=db.rawQuery("SELECT * FROM "+"'"+TableName+"'"+" ;",null);
@@ -146,11 +147,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         while(!resultSet.isAfterLast()){
 
             selectData data=new selectData();
-            if(TableName=="Cse"){
+            if(TableName=="computerScience"){
 
                 data=new selectData(resultSet.getString(0),resultSet.getString(1),resultSet.getColumnIndex("prn"),resultSet.getString(3),resultSet.getString(4),resultSet.getString(5),resultSet.getString(6));
             }
-            else if(TableName=="Mech"){
+            else if(TableName=="Mechanical"){
                  data=new selectData(resultSet.getString(0),resultSet.getString(1),resultSet.getColumnIndex("prn"),resultSet.getString(3),resultSet.getString(4));
             }else if(TableName=="ENTC"){
                  data=new selectData(resultSet.getString(0),resultSet.getString(1),resultSet.getColumnIndex("prn"),resultSet.getString(3));

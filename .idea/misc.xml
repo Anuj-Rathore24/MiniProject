@@ -16,6 +16,7 @@
         <entry key="app/src/main/res/layout/fragment_cse_form.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_cse_form_responses.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_entc_form.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_entc_form_responses.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_home_page.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_mech_form.xml" value="0.22" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/checkMark.xml" value="0.1" />
