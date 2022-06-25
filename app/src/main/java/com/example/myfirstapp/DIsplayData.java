@@ -5,13 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.Objects;
 
 public class DIsplayData extends AppCompatActivity {
-    TextView name,email,contact,input1,input2,input3,detailed,date,time;
+    TextView name,email,contact,input1,input2,input3,detailed,date,time,Cbox1,Cbox2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +43,12 @@ public class DIsplayData extends AppCompatActivity {
 
             detailed=findViewById(R.id.textView18);
             detailed.setText(Object.additional);
+
+            Cbox1=findViewById(R.id.textView24);
+            Cbox1.setText("Not Set");
+
+            Cbox2=findViewById(R.id.textView25);
+            Cbox2.setText("Not Set");
 
         }
         else if(Objects.equals(Object.type, "Mech")){

@@ -84,26 +84,21 @@
                     android:text="Additional Information"
                     android:textAlignment="center"
                     android:textSize="22sp" />
-
-                <CheckedTextView
-                    android:layout_width="match_parent"
+                <CheckBox
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_margin="10dp"
-                    android:checkMark="@drawable/checkmark_foreground"
-                    android:checked="true"
-                    android:text="checkbox1"
-                    android:textSize="19sp" />
+                    android:text="CheckBox1"
+                    android:ems="15"
+                    android:textSize="18sp" />
 
-                <CheckedTextView
-                    android:layout_width="match_parent"
+                    />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_margin="10dp"
-                    android:checkMark="@drawable/checkmark_foreground"
-                    android:checked="true"
-                    android:text="checkbox2"
-                    android:textSize="19sp" />
+                    android:ems="15"
+                    android:text="CheckBox2"
+                    android:textSize="18sp" />
 
                 <EditText
                     android:id="@+id/testing"

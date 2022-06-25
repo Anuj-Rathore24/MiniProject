@@ -17,7 +17,6 @@ import java.util.ArrayList;
 class selectData implements Serializable {
     String Name,Email,input1,input2,input3,time,date,additional,type;
     int prn;
-    int Contact,Percentile;
 
     selectData(String n,String e,int p,String i1,String i2,String i3,String d){
         Name=n;
@@ -153,12 +152,12 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             selectData data=new selectData();
             if(TableName=="computerScience"){
 
-                data=new selectData(resultSet.getString(0),resultSet.getString(1),resultSet.getColumnIndex("prn"),resultSet.getString(3),resultSet.getString(4),resultSet.getString(5),resultSet.getString(6));
+                data=new selectData(resultSet.getString(0),resultSet.getString(1),Integer.parseInt(resultSet.getString(2)),resultSet.getString(3),resultSet.getString(4),resultSet.getString(5),resultSet.getString(6));
             }
             else if(TableName=="Mechanical"){
-                 data=new selectData(resultSet.getString(0),resultSet.getString(1),resultSet.getColumnIndex("prn"),resultSet.getString(3),resultSet.getString(4));
+                 data=new selectData(resultSet.getString(0),resultSet.getString(1),Integer.parseInt(resultSet.getString(2)),resultSet.getString(3),resultSet.getString(4));
             }else if(TableName=="ENTC"){
-                 data=new selectData(resultSet.getString(0),resultSet.getString(1),resultSet.getColumnIndex("prn"),resultSet.getString(3));
+                 data=new selectData(resultSet.getString(0),resultSet.getString(1),Integer.parseInt(resultSet.getString(2)),resultSet.getString(3));
             }
             ourList.add(data);
             resultSet.moveToNext();
